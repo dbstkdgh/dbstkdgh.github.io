@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개발자 OOO 포트폴리오</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .tech-badge {
+            display: inline-block;
+            background-color: #e0e7ff; /* indigo-100 */
+            color: #3730a3; /* indigo-800 */
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin: 0.25rem;
+            transition: all 0.2s ease-in-out;
+        }
+        .tech-badge:hover {
+            background-color: #c7d2fe; /* indigo-200 */
+            transform: translateY(-2px);
+        }
+        .section-title {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 900;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #111827; /* gray-900 */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-700">
+
+    <!-- 헤더 -->
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-800">OOO's Portfolio</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-600 hover:text-blue-600 transition">소개</a>
+                <a href="#projects" class="text-gray-600 hover:text-blue-600 transition">프로젝트</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition">연락처</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+
+        <!-- 자기소개 섹션 -->
+        <section id="about" class="text-center mb-24">
+            <h1 class="text-5xl md:text-6xl font-black text-gray-800 leading-tight">안녕하세요,<br>개발자 <span class="text-blue-600">OOO</span>입니다.</h1>
+            <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-600">
+                데이터를 통해 가치를 만들고, 사용자에게 편리한 경험을 제공하는 것에 보람을 느낍니다.<br>
+                새로운 기술을 배우고 적용하는 것을 즐기는 주도적인 개발자입니다.
+            </p>
+        </section>
+
+        <!-- 프로젝트 섹션 -->
+        <section id="projects">
+            <h2 class="section-title">PROJECTS</h2>
+
+            <!-- 노포식당 검색기 프로젝트 카드 -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden md:flex">
+                <div class="md:w-1/3">
+                    <!-- 프로젝트 이미지 예시 -->
+                    <img src="https://placehold.co/600x800/dbeafe/312e81?text=Restaurant%0AApp%0AScreenshot" 
+                         alt="노포식당 검색기 앱 스크린샷"
+                         class="h-full w-full object-cover">
+                </div>
+                <div class="p-8 md:p-12 md:w-2/3">
+                    <h3 class="text-3xl font-bold text-gray-900">노포식당 검색기</h3>
+                    <p class="mt-2 text-gray-600">수원시 노포 식당 정보를 검색하는 웹 애플리케이션</p>
+
+                    <div class="mt-6">
+                        <a href="#" class="inline-block bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition font-semibold shadow-md mr-3">Live Demo (준비중)</a>
+                        <a href="#" class="inline-block bg-gray-800 text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition font-semibold shadow-md">GitHub</a>
+                    </div>
+                    
+                    <div class="mt-8 space-y-8">
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">프로젝트 소개</h4>
+                            <p><strong>목적:</strong> 수원시의 전통 노포 식당 정보를 JSON 데이터셋을 활용해 검색할 수 있는 웹 기반 애플리케이션입니다.</p>
+                            <p class="mt-2"><strong>주요 기능:</strong> 식당명, 주소, 메뉴, 가격으로 검색 가능하며, Streamlit을 활용한 사용자 친화적 인터페이스를 제공합니다. 메뉴 검색 시 가격 필터링 기능과 URL 디코딩된 주소 출력 기능을 지원합니다.</p>
+                            <div class="mt-4">
+                                <h5 class="font-semibold mb-2">#기술 스택</h5>
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Streamlit</span>
+                                <span class="tech-badge">JSON</span>
+                                <span class="tech-badge">RegEx</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">나의 역할</h4>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><strong>개발자:</strong> 데이터 수집, 전처리, 검색 기능 구현, 사용자 인터페이스 설계 등 애플리케이션 전반의 개발을 담당했습니다.</li>
+                                <li><strong>UI/UX 설계자:</strong> Streamlit을 활용해 직관적인 인터페이스를 설계하고, 사이드바를 통한 사용 안내 및 검색 결과 출력 레이아웃을 구성했습니다.</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">배운 점 (Lessons Learned)</h4>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><strong>데이터 처리:</strong> JSON 데이터 파싱 및 처리 능력이 향상되었고, 가격 데이터의 예외 상황(누락/비정상 데이터)을 정규 표현식으로 처리하는 기술을 습득했습니다.</li>
+                                <li><strong>Streamlit 웹 개발:</strong> Streamlit을 활용한 동적 웹 애플리케이션 구축 경험을 쌓았고, 컬럼 및 사이드바 레이아웃, 사용자 입력 처리 기술을 학습했습니다.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">성과</h4>
+                             <ul class="list-disc list-inside space-y-2">
+                                <li><strong>완성도 높은 검색 도구:</strong> 식당 명, 주소, 메뉴, 가격 별 검색을 지원하는 완성도 높은 검색 엔진을 구현했습니다.</li>
+                                <li><strong>사용자 경험 개선:</strong> URL 디코딩을 통한 주소 가독성을 향상시키고, 가격 입력 오류 처리 로직으로 사용자 편의성을 강화했습니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 연락처 섹션 -->
+        <section id="contact" class="text-center mt-24">
+             <h2 class="section-title">CONTACT</h2>
+             <p class="text-lg text-gray-600">언제든지 편하게 연락주세요.</p>
+             <div class="mt-6">
+                 <a href="mailto:youremail@example.com" class="inline-block bg-green-500 text-white text-lg font-bold px-8 py-3 rounded-lg hover:bg-green-600 transition shadow-lg">
+                    이메일 보내기
+                 </a>
+             </div>
+        </section>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="bg-gray-800 text-white mt-20">
+        <div class="container mx-auto px-6 py-4 text-center">
+            <p>&copy; 2024 OOO. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
