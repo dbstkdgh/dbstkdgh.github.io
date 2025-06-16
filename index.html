@@ -27,6 +27,50 @@
             background-color: #c7d2fe; /* indigo-200 */
             transform: translateY(-2px);
         }
+        .skill-group-title {
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 600; /* font-semibold */
+            color: #4b5563; /* gray-700 */
+            margin-bottom: 0.5rem;
+            margin-top: 1rem; /* Space above each skill group */
+            border-bottom: 1px solid #e5e7eb; /* gray-200 */
+            padding-bottom: 0.25rem;
+        }
+        .skill-item-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #f3f4f6; /* light gray dashed line */
+        }
+        .skill-item-row:last-child {
+            border-bottom: none;
+        }
+        .skill-item-info {
+            display: flex;
+            align-items: center;
+        }
+        .skill-item-info img {
+            width: 1.5rem; /* Icon size */
+            height: 1.5rem; /* Icon size */
+            margin-right: 0.75rem;
+            object-fit: contain; /* Ensure icon is fully visible */
+        }
+        .skill-level-dots {
+            display: flex;
+        }
+        .skill-dot {
+            width: 0.75rem; /* Dot size */
+            height: 0.75rem; /* Dot size */
+            border-radius: 0; /* 동그라미를 네모로 변경 */
+            background-color: #d1d5db; /* Gray-300 for empty */
+            margin-left: 0.25rem; /* Space between dots */
+        }
+        .skill-dot.filled {
+            background-color: #4f46e5; /* Indigo-600 for filled */
+        }
+
         .section-title {
             font-size: 2.25rem; /* text-4xl */
             font-weight: 900;
@@ -94,15 +138,15 @@
             display: block;
         }
         /* New styles for profile details */
-        #profile-details {
-            transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+        #profile-details-expandable { /* ID 변경: profile-details -> profile-details-expandable */
             opacity: 0;
             max-height: 0;
             overflow: hidden;
+            transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out; /* Add transition for smoothness */
         }
-        #profile-details.show {
+        #profile-details-expandable.show { /* ID 변경 */
             opacity: 1;
-            max-height: 1000px; /* Adjust based on content size */
+            max-height: 2000px; /* Adjust based on content size, increased for safety */
         }
     </style>
 </head>
@@ -144,66 +188,163 @@
                                     <span><a href="https://github.com/dbstkdgh" target="_blank" class="hover:text-blue-600">github.com/dbstkdgh</a></span>
                                 </div>
                             </div>
+                            <div class="mt-6 text-center"> <button id="read-more-btn" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-semibold shadow-md">자세히 보기</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="mt-10 pt-8 border-t border-gray-200">
-                        <h4 class="text-2xl font-bold text-gray-800 mb-4 text-center md:text-left">자기소개</h4>
-                        <p class="text-gray-700 leading-relaxed">
-                            안녕하세요,<br>
-                            데이터 분석가를 꿈꾸는 윤상호입니다.<br>
-                            정보의 홍수 속에서 핵심을 잡는 윤상호입니다.<br>
-                            작은 호기심에서 시작해 값진 결과물에 이르기까지,<br>
-                            A to Z 전 과정을 경험하며 문제를 해결하는 데 집중해왔습니다.<br>
-                            지적 호기심으로부터 끊임없는 아이디어를 창출 해 냅니다.
-                        </p>
-                        <div class="mt-6 text-center">
-                            <button id="read-more-btn" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-semibold shadow-md">자세히 보기</button>
+                    <div id="profile-details-expandable" class="mt-8">
+                        <div class="mt-10 pt-8 border-t border-gray-200">
+                            <h4 class="text-2xl font-bold text-gray-800 mb-4 text-center md:text-left">자기소개</h4>
+                            <p class="text-gray-700 leading-relaxed">
+                                안녕하세요,<br>
+                                데이터 분석가를 꿈꾸는 윤상호입니다.<br>
+                                정보의 홍수 속에서 핵심을 잡는 윤상호입니다.<br>
+                                작은 호기심에서 시작해 값진 결과물에 이르기까지,<br>
+                                A to Z 전 과정을 경험하며 문제를 해결하는 데 집중해왔습니다.<br>
+                                지적 호기심으로부터 끊임없는 아이디어를 창출 해 냅니다.
+                            </p>
                         </div>
-                    </div>
-                    <div id="profile-details" class="mt-8 hidden">
-                        <div class="border-t border-gray-200 pt-6">
+                        <div class="mt-6">
                             <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">경력</h4>
                             <ul class="list-disc list-inside space-y-2 text-gray-700">
-                                <li><strong>세계문화유산축전 홍보부스 운영팀</strong> | 2023.08 ~ 2023.10</li>
-                                <li><strong>경기신용재단 경영지원팀 업무지원 (학생인턴)</strong> | 2022.07 ~ 2022.08</li>
-                                <li><strong>(주)넥스플렉스 반도체 생산직 사원</strong> | 2018.05 ~ 2019.02</li>
-                                <li><strong>(주)코스모텍 보안팀 사원</strong> | 2016.08 ~ 2017.02</li>
+                                <li>세계문화유산축전 홍보부스 운영팀 | 2023.08 ~ 2023.10</li>
+                                <li>경기신용재단 경영지원팀 업무지원 (학생인턴) | 2022.07 ~ 2022.08</li>
+                                <li>(주)넥스플렉스 반도체 생산직 사원 | 2018.05 ~ 2019.02</li>
+                                <li>(주)코스모텍 보안팀 사원 | 2016.08 ~ 2017.02</li>
                             </ul>
                         </div>
                         <div class="mt-6">
                             <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">학력</h4>
                             <ul class="list-disc list-inside space-y-2 text-gray-700">
-                                <li><strong>KDT 멀티캠퍼스 데이터 분석가 과정(파이썬)</strong> | 2024.12 - 2025.05</li>
-                                <li><strong>K-디지털 기초역량훈련 (SQL)</strong> | 2023.06 ~ 2023.09</li>
-                                <li><strong>한경국립대학교 행정학과 (편입학)</strong> | 2020.03 - 2023.08</li>
-                                <li><strong>서원대학교 행정학과</strong> | 2013.03 - 2020.02</li>
-                                <li><strong>괴산고등학교</strong> | 2010.03 - 2013.02</li>
+                                <li>KDT 멀티캠퍼스 데이터 분석가 과정(파이썬) | 2024.12 - 2025.05</li>
+                                <li>K-디지털 기초역량훈련 (SQL) | 2023.06 ~ 2023.09</li>
+                                <li>한경국립대학교 행정학과 (편입학) | 2020.03 - 2023.08</li>
+                                <li>서원대학교 행정학과 | 2013.03 - 2020.02</li>
+                                <li>괴산고등학교 | 2010.03 - 2013.02</li>
                             </ul>
                         </div>
                         <div class="mt-6">
                             <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">스킬</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="tech-badge">Python</span>
-                                <span class="tech-badge">Pandas</span>
-                                <span class="tech-badge">NumPy</span>
-                                <span class="tech-badge">Scikit-learn</span>
-                                <span class="tech-badge">Streamlit</span>
-                                <span class="tech-badge">SQL</span>
-                                <span class="tech-badge">MySQL</span>
-                                <span class="tech-badge">MariaDB</span>
-                                <span class="tech-badge">Selenium</span>
-                                <span class="tech-badge">FastText</span>
-                                <span class="tech-badge">eKoNLPy</span>
-                                <span class="tech-badge">Kiwipiepy</span>
-                                <span class="tech-badge">Matplotlib</span>
-                                <span class="tech-badge">Seaborn</span>
-                                <span class="tech-badge">Plotly</span>
-                                <span class="tech-badge">Folium</span>
-                                <span class="tech-badge">GeoJSON</span>
-                                <span class="tech-badge">XGBoost</span>
-                                <span class="tech-badge">LSTM</span>
-                                <span class="tech-badge">ARIMA</span>
-                                <span class="tech-badge">SMOTE</span>
+                            <div class="mb-4">
+                                <div class="skill-group-title">협업 툴</div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="skill-item-row">
+                                        <div class="skill-item-info">
+                                            <img src="images/slack_icon.png" alt="Slack Icon">
+                                            <span>Slack</span>
+                                        </div>
+                                        <div class="skill-level-dots">
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item-row">
+                                        <div class="skill-item-info">
+                                            <img src="images/github_icon.png" alt="GitHub Icon">
+                                            <span>GitHub</span>
+                                        </div>
+                                        <div class="skill-level-dots">
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot"></div>
+                                            <div class="skill-dot"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item-row">
+                                        <div class="skill-item-info">
+                                            <img src="images/notion_icon.png" alt="Notion Icon">
+                                            <span>Notion</span>
+                                        </div>
+                                        <div class="skill-level-dots">
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="skill-group-title">Design - UI/UX</div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="skill-item-row">
+                                        <div class="skill-item-info">
+                                            <img src="images/figma_icon.png" alt="Figma Icon">
+                                            <span>Figma</span>
+                                        </div>
+                                        <div class="skill-level-dots">
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot"></div>
+                                            <div class="skill-dot"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item-row">
+                                        <div class="skill-item-info">
+                                            <img src="images/drawio_icon.png" alt="Draw.io Icon">
+                                            <span>Draw.io</span>
+                                        </div>
+                                        <div class="skill-level-dots">
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="skill-group-title">OA</div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="skill-item-row">
+                                        <div class="skill-item-info">
+                                            <img src="images/word_icon.png" alt="Word Icon">
+                                            <span>Word</span>
+                                        </div>
+                                        <div class="skill-level-dots">
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item-row">
+                                        <div class="skill-item-info">
+                                            <img src="images/excel_icon.png" alt="Excel Icon">
+                                            <span>Excel</span>
+                                        </div>
+                                        <div class="skill-level-dots">
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item-row">
+                                        <div class="skill-item-info">
+                                            <img src="images/powerpoint_icon.png" alt="PowerPoint Icon">
+                                            <span>PowerPoint</span>
+                                        </div>
+                                        <div class="skill-level-dots">
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot filled"></div>
+                                            <div class="skill-dot"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="mt-6 text-center">
@@ -599,18 +740,22 @@
         // JavaScript for Profile Read More functionality
         const readMoreBtn = document.getElementById('read-more-btn');
         const closeDetailsBtn = document.getElementById('close-details-btn');
-        const profileDetails = document.getElementById('profile-details');
+        const profileDetailsExpandable = document.getElementById('profile-details-expandable'); // Changed ID
+
+        // Initially hide the expandable details and show the read more button
+        profileDetailsExpandable.classList.add('hidden'); // Ensure it starts hidden
+        readMoreBtn.classList.remove('hidden'); // Ensure button is visible initially
 
         readMoreBtn.addEventListener('click', () => {
-            profileDetails.classList.remove('hidden');
-            profileDetails.classList.add('show');
-            readMoreBtn.classList.add('hidden'); // Hide Read More button
+            profileDetailsExpandable.classList.remove('hidden');
+            profileDetailsExpandable.classList.add('show');
+            readMoreBtn.classList.add('hidden'); // Hide Read More button after click
         });
 
         closeDetailsBtn.addEventListener('click', () => {
-            profileDetails.classList.remove('show');
+            profileDetailsExpandable.classList.remove('show');
             setTimeout(() => {
-                profileDetails.classList.add('hidden');
+                profileDetailsExpandable.classList.add('hidden');
                 readMoreBtn.classList.remove('hidden'); // Show Read More button again
             }, 300); // Match the transition duration
         });
