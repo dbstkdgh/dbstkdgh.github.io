@@ -93,6 +93,17 @@
         .project-detail-section.active {
             display: block;
         }
+        /* New styles for profile details */
+        #profile-details {
+            transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+        }
+        #profile-details.show {
+            opacity: 1;
+            max-height: 1000px; /* Adjust based on content size */
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-700">
@@ -101,7 +112,7 @@
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-gray-800">윤상호's Portfolio</a>
             <nav class="hidden md:flex space-x-8">
-                <a href="#about" class="text-gray-600 hover:text-blue-600 transition">소개</a>
+                <a href="#profile" class="text-gray-600 hover:text-blue-600 transition">프로필</a>
                 <a href="#projects" class="text-gray-600 hover:text-blue-600 transition">프로젝트</a>
                 <a href="#contact" class="text-gray-600 hover:text-blue-600 transition">연락처</a>
             </nav>
@@ -110,14 +121,97 @@
 
     <main class="container mx-auto px-6 py-12 md:py-20">
 
-        <section id="about" class="text-center mb-24">
-            <h1 class="text-5xl md:text-6xl font-black text-gray-800 leading-tight">안녕하세요,<br><span class="text-blue-600">데이터 분석가를 꿈꾸는 윤상호</span>입니다.</h1>
-            <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-600">
-                정보의 홍수 속에서 핵심을 잡는 윤상호입니다.<br>
-                작은 호기심에서 시작해 값진 결과물에 이르기까지,<br>
-                A to Z 전 과정을 경험하며 문제를 해결하는 데 집중해왔습니다.<br>
-                지적 호기심으로부터 끊임없는 아이디어를 창출 해 냅니다.
-            </p>
+        <section id="profile" class="mb-24 py-16 bg-white rounded-2xl shadow-lg">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">PROFILE</h2>
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-10">
+                        <div class="flex-shrink-0">
+                            <div class="h-48 w-48 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 shadow-md">
+                                <span class="text-xl font-bold">사진</span>
+                            </div>
+                        </div>
+                        <div class="flex-grow text-center md:text-left">
+                            <h3 class="text-4xl font-bold text-gray-800">윤상호</h3>
+                            <p class="text-blue-600 font-semibold text-lg mt-1">데이터 분석가 지망생</p>
+                            <div class="mt-6 space-y-4 text-gray-700 text-lg">
+                                <div class="flex items-center justify-center md:justify-start">
+                                    <svg class="w-6 h-6 mr-3 text-gray-500" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                                    <span>yoonsh2704@naver.com / yoonsh2704@gmail.com</span>
+                                </div>
+                                <div class="flex items-center justify-center md:justify-start">
+                                    <svg class="w-6 h-6 mr-3 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.11.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.085 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.652.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .319.22.694.825.576C20.565 21.795 24 17.3 24 12 24 5.373 18.627 0 12 0z"/></svg>
+                                    <span><a href="https://github.com/dbstkdgh" target="_blank" class="hover:text-blue-600">github.com/dbstkdgh</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10 pt-8 border-t border-gray-200">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-4 text-center md:text-left">자기소개</h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            안녕하세요,<br>
+                            데이터 분석가를 꿈꾸는 윤상호입니다.<br>
+                            정보의 홍수 속에서 핵심을 잡는 윤상호입니다.<br>
+                            작은 호기심에서 시작해 값진 결과물에 이르기까지,<br>
+                            A to Z 전 과정을 경험하며 문제를 해결하는 데 집중해왔습니다.<br>
+                            지적 호기심으로부터 끊임없는 아이디어를 창출 해 냅니다.
+                        </p>
+                        <div class="mt-6 text-center">
+                            <button id="read-more-btn" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-semibold shadow-md">자세히 보기</button>
+                        </div>
+                    </div>
+                    <div id="profile-details" class="mt-8 hidden">
+                        <div class="border-t border-gray-200 pt-6">
+                            <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">경력</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li><strong>세계문화유산축전 홍보부스 운영팀</strong> | 2023.08 ~ 2023.10</li>
+                                <li><strong>경기신용재단 경영지원팀 업무지원 (학생인턴)</strong> | 2022.07 ~ 2022.08</li>
+                                <li><strong>(주)넥스플렉스 반도체 생산직 사원</strong> | 2018.05 ~ 2019.02</li>
+                                <li><strong>(주)코스모텍 보안팀 사원</strong> | 2016.08 ~ 2017.02</li>
+                            </ul>
+                        </div>
+                        <div class="mt-6">
+                            <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">학력</h4>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                <li><strong>KDT 멀티캠퍼스 데이터 분석가 과정(파이썬)</strong> | 2024.12 - 2025.05</li>
+                                <li><strong>K-디지털 기초역량훈련 (SQL)</strong> | 2023.06 ~ 2023.09</li>
+                                <li><strong>한경국립대학교 행정학과 (편입학)</strong> | 2020.03 - 2023.08</li>
+                                <li><strong>서원대학교 행정학과</strong> | 2013.03 - 2020.02</li>
+                                <li><strong>괴산고등학교</strong> | 2010.03 - 2013.02</li>
+                            </ul>
+                        </div>
+                        <div class="mt-6">
+                            <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">스킬</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Pandas</span>
+                                <span class="tech-badge">NumPy</span>
+                                <span class="tech-badge">Scikit-learn</span>
+                                <span class="tech-badge">Streamlit</span>
+                                <span class="tech-badge">SQL</span>
+                                <span class="tech-badge">MySQL</span>
+                                <span class="tech-badge">MariaDB</span>
+                                <span class="tech-badge">Selenium</span>
+                                <span class="tech-badge">FastText</span>
+                                <span class="tech-badge">eKoNLPy</span>
+                                <span class="tech-badge">Kiwipiepy</span>
+                                <span class="tech-badge">Matplotlib</span>
+                                <span class="tech-badge">Seaborn</span>
+                                <span class="tech-badge">Plotly</span>
+                                <span class="tech-badge">Folium</span>
+                                <span class="tech-badge">GeoJSON</span>
+                                <span class="tech-badge">XGBoost</span>
+                                <span class="tech-badge">LSTM</span>
+                                <span class="tech-badge">ARIMA</span>
+                                <span class="tech-badge">SMOTE</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <button id="close-details-btn" class="inline-block bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition font-semibold shadow-md">닫기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="projects" class="mb-24">
@@ -139,8 +233,8 @@
                 <div class="project-card-item bg-white rounded-2xl shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-transform duration-300" data-project-id="interest-rate-prediction">
                     <img src="images/corona-4917912_1920 (1).jpg" alt="금리 예측 프로젝트 스크린샷" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h4 class="text-xl font-bold text-gray-900 truncate">금리 예측 프로젝트</h4>
-                        <div class="mt-4 text-xs text-gray-500">기간: 2025.02.24 ~ 2025.03.10</div>
+                        <h4 class="text-xl font-bold text-gray-900 truncate">텍스트 마이닝 기반 시장지표 예측 모델링</h4>
+                        <div class="mt-4 text-xs text-gray-500">기간: 2025.02.25 ~ 2025.03.09</div>
                     </div>
                 </div>
 
@@ -164,10 +258,8 @@
 
         <section id="contact" class="text-center mt-24">
             <h2 class="section-title">CONTACT</h2>
-            <p class="text-lg text-gray-600">수원특례시</p>
-            <p class="text-lg text-gray-600">언제든지 편하게 연락주세요.</p>
             <div class="mt-6 flex justify-center space-x-4">
-                <a href="mailto:yoonsh2704@gmail.com" class="inline-block bg-green-500 text-white text-lg font-bold px-8 py-3 rounded-lg hover:bg-green-600 transition shadow-lg">
+                <a href="mailto:yoonsh2704@naver.com" class="inline-block bg-green-500 text-white text-lg font-bold px-8 py-3 rounded-lg hover:bg-green-600 transition shadow-lg">
                     이메일 보내기
                 </a>
                 <a href="https://github.com/dbstkdgh" target="_blank" class="inline-block bg-gray-800 text-white text-lg font-bold px-8 py-3 rounded-lg hover:bg-gray-900 transition shadow-lg">
@@ -180,7 +272,7 @@
 
     <div id="project-modal-container" class="modal-container">
         <div class="modal-content">
-            <button class="close-button" id="close-modal-btn">&times;</button>
+            <button class="close-button" id="close-modal-btn">×</button>
 
             <div id="project-old-restaurant-app" class="project-detail-section">
                 <h3 class="text-3xl font-bold text-gray-900 mb-2">수원시 노포식당 앱 개발 대시보드 (1인 개발)</h3>
@@ -204,39 +296,39 @@
                 <div class="mt-8 space-y-8">
                     <div>
                         <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">프로젝트 소개</h4>
-                        <p class="text-gray-700">이 프로젝트는 수원시의 전통 노포 식당 정보를 JSON 데이터셋으로 검색하는 웹 기반 애플리케이션입니다. 기획부터 개발, 배포까지 전 과정을 1인 개발로 진행했으며, 백엔드(데이터 처리 및 검색 로직)와 프론트엔드(사용자 인터페이스)를 모두 직접 담당했습니다.</p>
+                        <p class="text-gray-700">수원시 노포 식당 정보 JSON 데이터셋 검색 웹 기반 애플리케이션. 기획부터 개발, 배포까지 1인 개발. 백엔드(데이터 처리 및 검색 로직)와 프론트엔드(사용자 인터페이스) 직접 담당.</p>
                     </div>
 
                     <div>
                         <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">목적</h4>
-                        <p class="text-gray-700">사용자에게 식당명, 주소, 메뉴, 가격 검색 기능을 제공하고, Streamlit 기반의 사용자 친화적인 인터페이스를 제공하는 것이 주된 목적입니다. 특히, 메뉴 검색 시 가격 필터링 및 URL 디코딩된 주소 출력을 지원합니다. 이 프로젝트는 모든 기능을 1인 개발로 구현함으로써 프로젝트 전반에 대한 이해도와 문제 해결 능력을 입증하는 것을 목표로 합니다.</p>
+                        <p class="text-gray-700">식당명, 주소, 메뉴, 가격 검색 기능 사용자 제공. Streamlit 기반 사용자 친화적 인터페이스 제공. 메뉴 검색 시 가격 필터링 및 URL 디코딩 주소 출력 지원. 1인 개발 구현을 통한 프로젝트 전반 이해도 및 문제 해결 능력 입증.</p>
                     </div>
 
                     <div>
                         <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">역할 및 성과</h4>
-                        <p class="text-gray-700 mb-2">데이터 크롤링부터 전처리, 적재, 그리고 대시보드 개발까지 모든 과정을 1인 책임지고 수행.</p>
+                        <p class="text-gray-700 mb-2">데이터 크롤링부터 전처리, 적재, 대시보드 개발까지 모든 과정 1인 책임 수행.</p>
                         <ul class="list-disc list-inside space-y-1 text-gray-700">
-                            <li><strong>데이터 수집 및 전처리:</strong> 다이닝코드(DiningCode) 사이트에서 Selenium을 활용하여 노포 식당 데이터를 직접 수집. 수집된 데이터를 JSON 파일로 저장하기 위해 필요한 인코딩/디코딩 과정을 직접 처리하며 데이터 정제 및 가공.</li>
-                            <li><strong>대시보드 성능 최적화:</strong> Streamlit 대시보드의 캐싱 기능을 적극 활용하여 데이터 로딩 및 처리 속도를 획기적으로 개선.</li>
-                            <li><strong>통합적인 UI/UX 디자인 및 구현:</strong> Streamlit 대시보드의 전체적인 UI/UX 디자인 직접 담당 및 구현.</li>
-                            <li><strong>데이터-서비스 간 원활한 연동:</strong> GitHub에 호스팅된 JSON 파일과 Streamlit 기반 프론트엔드 간의 완벽한 데이터 연결 및 흐름 구축.</li>
+                            <li>데이터 수집 및 전처리: 다이닝코드(DiningCode) 사이트 Selenium 활용 노포 식당 데이터 직접 수집. JSON 파일 저장 위한 인코딩/디코딩 과정 직접 처리, 데이터 정제 및 가공.</li>
+                            <li>대시보드 성능 최적화: Streamlit 대시보드 캐싱 기능 적극 활용, 데이터 로딩 및 처리 속도 획기적 개선.</li>
+                            <li>통합적인 UI/UX 디자인 및 구현: Streamlit 대시보드 전체 UI/UX 디자인 직접 담당 및 구현.</li>
+                            <li>데이터-서비스 간 원활한 연동: GitHub 호스팅 JSON 파일과 Streamlit 기반 프론트엔드 간 완벽한 데이터 연결 및 흐름 구축.</li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">레슨 런 (Lessons Learned)</h4>
                         <ul class="list-disc list-inside space-y-1 text-gray-700">
-                            <li><strong>데이터 처리와 기본기 중요성:</strong> JSON 데이터 파싱 및 처리 능력 향상. 가격 데이터의 예외 상황(누락/비정상) 정규 표현식 처리 기술 습득. 이 모든 과정에서 견고한 기본기 중요성 깊이 체감.</li>
-                            <li><strong>Streamlit 웹 개발 및 UI/UX 경험:</strong> Streamlit 활용 동적 웹 애플리케이션 구축. 컬럼 및 사이드바 레이아웃, 사용자 입력 처리 기술 학습. 직접 UI/UX 설계 및 구현, 사용자 관점 개발 중요성 깊이 이해.</li>
-                            <li><strong>문제 해결 및 독립적 개발 능력:</strong> 프로젝트 모든 단계 문제 스스로 분석 및 해결. 독립적 문제 해결 능력과 전체 개발 프로세스 총괄 역량 크게 향상.</li>
+                            <li>데이터 처리와 기본기 중요성: JSON 데이터 파싱 및 처리 능력 향상. 가격 데이터 예외 상황(누락/비정상) 정규 표현식 처리 기술 습득. 모든 과정에서 견고한 기본기 중요성 깊이 체감.</li>
+                            <li>Streamlit 웹 개발 및 UI/UX 경험: Streamlit 활용 동적 웹 애플리케이션 구축. 컬럼 및 사이드바 레이아웃, 사용자 입력 처리 기술 학습. 직접 UI/UX 설계 및 구현, 사용자 관점 개발 중요성 깊이 이해.</li>
+                            <li>문제 해결 및 독립적 개발 능력: 프로젝트 모든 단계 문제 스스로 분석 및 해결. 독립적 문제 해결 능력과 전체 개발 프로세스 총괄 역량 크게 향상.</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <div id="project-interest-rate-prediction" class="project-detail-section">
-                <h3 class="text-3xl font-bold text-gray-900 mb-2">금리 예측 프로젝트</h3>
-                <p class="mt-2 text-sm text-gray-500"><strong>기간:</strong> 2025.02.24 ~ 2025.03.10</p>
+                <h3 class="text-3xl font-bold text-gray-900 mb-2">텍스트 마이닝 기반 시장지표 예측 모델링</h3>
+                <p class="mt-2 text-sm text-gray-500"><strong>기간:</strong> 2025.02.25 ~ 2025.03.09</p>
 
                 <div class="mt-6 flex flex-wrap gap-3">
                     <a href="https://github.com/kdt-DA-bootcamp/BOK-TEAM-2/tree/main/Yoon" target="_blank" class="inline-block bg-gray-800 text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition font-semibold shadow-md">GitHub</a>
@@ -265,48 +357,48 @@
                 <div class="mt-8 space-y-8">
                     <div>
                         <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">프로젝트 소개</h4>
-                        <p class="text-gray-700">방대한 양의 경제 뉴스 기사, 한국은행 금융통화위원회(MPB) 의사록, 금융 보고서 등 비정형 텍스트 데이터를 텍스트 마이닝 기법으로 분석하여 금리 변화 방향을 예측하는 모델을 개발한 프로젝트입니다.</p>
+                        <p class="text-gray-700">경제 뉴스 기사, 한국은행 금융통화위원회(MPB) 의사록, 금융 보고서 등 비정형 텍스트 데이터 텍스트 마이닝 기법으로 분석, 금리 변화 방향 예측 모델 개발.</p>
                     </div>
 
                     <div>
                         <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">목적</h4>
-                        <p class="text-gray-700">중앙은행 커뮤니케이션의 매파적/비둘기파적 '톤'을 정량화하고, 이를 예측 모델에 활용하여 금리 인상 및 하락 예측의 정확도를 향상시키는 것이 목표입니다. 특히, 텍스트 기반 지표가 기존 거시경제 변수만으로는 포착하기 어려웠던 정책 결정의 추가적인 설명력을 제공함을 보였습니다.</p>
+                        <p class="text-gray-700">중앙은행 커뮤니케이션의 매파적/비둘기파적 '톤' 정량화, 예측 모델에 활용하여 금리 인상 및 하락 예측 정확도 향상. 텍스트 기반 지표가 기존 거시경제 변수만으로는 포착하기 어려웠던 정책 결정의 추가적인 설명력 제공 입증.</p>
                     </div>
 
                     <div>
                         <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">프로젝트 수행 과정</h4>
                         <ul class="list-disc list-inside space-y-1 text-gray-700">
-                            <li><strong>대규모 경제 텍스트 데이터 수집:</strong> 연합인포맥스, 이데일리, 한국경제 뉴스 및 한국은행 금통위 의사록 등 총 20만 건 이상의 금리 관련 텍스트 데이터 수집.</li>
-                            <li><strong>고도화된 한국어 텍스트 전처리:</strong> 품사 필터링, 불용어 제거, 띄어쓰기 교정 등 한국어 특성에 최적화된 전처리 파이프라인 구축.</li>
-                            <li><strong>매파/비둘기파 감성 사전 구축 및 분류:</strong> eKoNLPy, Kiwipiepy, FastText를 활용해 텍스트 토큰화 및 단어 임베딩 수행. 매파적(Hawkish) 성격과 비둘기파적(Dovish) 성격을 나누는 감성 사전 구축. 코사인 유사도와 같은 기법을 사용해 개별 단어가 두 사전 중 어느 쪽에 더 가까운지 분류하고, 이를 통해 의사록(정답셋)의 감성 톤 예측.</li>
-                            <li><strong>금리 예측 모델링:</strong> N-gram 특징과 Naive Bayes Classifier(NBC)를 중심으로 CountVectorizer, TF-IDF 기법을 활용한 금리 변화 예측 모델 개발.</li>
-                            <li><strong>탐색적 데이터 분석(EDA) 및 시각화:</strong> 총 수집 기사 수, 데이터 처리 파이프라인, FastText 단어 임베딩 산점도, 각 모델 학습 결과 및 성능 비교 등 시각적 분석 자료 제공.</li>
+                            <li>대규모 경제 텍스트 데이터 수집: 연합인포맥스, 이데일리, 한국경제 뉴스 및 한국은행 금통위 의사록 등 총 20만 건 이상 금리 관련 텍스트 데이터 수집.</li>
+                            <li>고도화된 한국어 텍스트 전처리: 품사 필터링, 불용어 제거, 띄어쓰기 교정 등 한국어 특성 최적화 전처리 파이프라인 구축.</li>
+                            <li>매파/비둘기파 감성 사전 구축 및 분류: eKoNLPy, Kiwipiepy, FastText 활용 텍스트 토큰화 및 단어 임베딩. 매파적(Hawkish) 성격과 비둘기파적(Dovish) 성격을 나누는 감성 사전 구축. 코사인 유사도 기법으로 개별 단어 분류, 의사록(정답셋) 감성 톤 예측.</li>
+                            <li>금리 예측 모델링: N-gram 특징 (1~5그램)과 Naive Bayes Classifier(NBC) 중심으로 CountVectorizer, TF-IDF 기법 활용 금리 변화 예측 모델 개발.</li>
+                            <li>탐색적 데이터 분석(EDA) 및 시각화: 총 수집 기사 수, 데이터 처리 파이프라인, FastText 단어 임베딩 산점도, 각 모델 학습 결과 및 성능 비교 등 시각적 분석 자료 제공.</li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">역할</h4>
                         <ul class="list-disc list-inside space-y-1 text-gray-700">
-                            <li><strong>데이터 수집 및 전처리 리더:</strong> 약 3만 건에 달하는 연합인포맥스 뉴스 기사 크롤링 및 전처리 과정 총괄. 품사 필터링, 불용어 제거, 띄어쓰기 교정 등 고품질 데이터 정제 작업 수행하여 모델 학습 기반 마련했습니다.</li>
-                            <li><strong>텍스트 임베딩 및 모델 학습 전문가:</strong> FastText 모델 학습 주도하여 서브워드 학습, OOV(Out-Of-Vocabulary) 처리, Rare Word(저빈도 단어) 대응 등 임베딩 성능 최적화. 이를 통해 텍스트 데이터가 모델에 효과적으로 활용될 수 있도록 기여했습니다.</li>
+                            <li>데이터 수집 및 전처리 기여: 약 3만 건에 달하는 연합인포맥스 뉴스 기사 크롤링 및 전처리 과정 참여. 고품질 데이터 정제 작업(품사 필터링, 불용어 제거, 띄어쓰기 교정) 수행.</li>
+                            <li>텍스트 임베딩 및 모델 학습 참여: FastText 모델 학습 참여, 서브워드 학습, OOV(Out-Of-Vocabulary) 처리, Rare Word(저빈도 단어) 대응 등 임베딩 성능 최적화 기여.</li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">성과</h4>
                         <ul class="list-disc list-inside space-y-1 text-gray-700">
-                            <li><strong>고성능 금리 예측 지표 개발:</strong> 매파/비둘기파 감성 사전 구축 및 코사인 유사도 기반 분류를 통해 한국은행의 통화정책 '톤' 성공적 정량화. 이 텍스트 기반 지표는 기존 거시경제 변수 대비 한국은행의 통화정책 결정에 대한 높은 설명력을 가짐을 입증.</li>
-                            <li><strong>강화된 예측 모델 성능:</strong> 텍스트 마이닝을 통해 얻은 정량적 정보가 금리 인상/하락 예측 모델의 설명력과 예측 정확도를 유의미하게 개선.</li>
-                            <li><strong>텍스트 데이터 활용 능력 증명:</strong> 대규모 비정형 텍스트 데이터의 수집, 전처리, 임베딩, 모델링 전 과정에 대한 숙련된 기술 활용 및 복잡한 문제 해결 역량 성공적으로 증명.</li>
+                            <li>고성능 금리 예측 지표 개발: 매파/비둘기파 감성 사전 구축 및 코사인 유사도 기반 분류 통해 한국은행 통화정책 '톤' 성공적 정량화. 텍스트 기반 지표가 기존 거시경제 변수 대비 한국은행의 통화정책 결정에 대한 높은 설명력 입증.</li>
+                            <li>강화된 예측 모델 성능: 텍스트 마이닝을 통해 얻은 정량적 정보가 금리 인상/하락 예측 모델의 설명력과 예측 정확도 유의미하게 개선. (CountVectorizer Accuracy 0.60, TF-IDF Accuracy 0.58).</li>
+                            <li>텍스트 데이터 활용 능력 증명: 대규모 비정형 텍스트 데이터 수집, 전처리, 임베딩, 모델링 전 과정 숙련된 기술 활용 및 복잡한 문제 해결 역량 증명.</li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">레슨 런 (Lessons Learned)</h4>
                         <ul class="list-disc list-inside space-y-1 text-gray-700">
-                            <li><strong>한국어 자연어 처리의 중요성:</strong> 한국어 텍스트의 복잡한 특성을 고려한 eKoNLPy와 같은 경제·금융 특화 NLP 도구의 활용이 분석 정확도를 극대화하는 데 필수적임을 체감.</li>
-                            <li><strong>분야별 감성 사전 구축의 필요성:</strong> 범용 사전으로는 포착하기 어려운 경제·금융 분야의 미묘한 의미 차이를 정확히 반영하기 위해 특정 분야에 특화된 감성 사전 구축 및 유사도 기반 분류의 중요성을 깊이 학습.</li>
-                            <li><strong>모델 선택 및 최적화 전략:</strong> Word2Vec, FastText 등 다양한 단어 임베딩 기법과 N-gram, NBC 등 모델링 기법의 특성 이해 및 실제 데이터에 최적화된 조합을 찾아 예측 성능을 지속적으로 개선하는 경험을 얻음.</li>
+                            <li>한국어 자연어 처리의 중요성: 한국어 텍스트의 복잡한 특성 고려 eKoNLPy 등 경제·금융 특화 NLP 도구 활용이 분석 정확도 극대화에 필수적임을 체감.</li>
+                            <li>분야별 감성 사전 구축의 필요성: 범용 사전으로 포착 어려운 경제·금융 분야 미묘한 의미 차이 정확히 반영 위해 특정 분야 특화 감성 사전 구축 및 유사도 기반 분류의 중요성 깊이 학습.</li>
+                            <li>모델 선택 및 최적화 전략: Word2Vec, FastText 등 다양한 단어 임베딩 기법과 N-gram, NBC 등 모델링 기법의 특성 이해 및 실제 데이터에 최적화된 조합을 찾아 예측 성능 지속적 개선 경험.</li>
                         </ul>
                     </div>
                 </div>
@@ -319,7 +411,7 @@
                 <div class="mt-6 flex flex-wrap gap-3">
                     <a href="https://addsteampy-2evlq55ub8wxvktumrzaeq.streamlit.app/" target="_blank" class="inline-block bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition font-semibold shadow-md">Live Demo</a>
                     <a href="https://github.com/kdt-DA-bootcamp/TP" target="_blank" class="inline-block bg-gray-800 text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition font-semibold shadow-md">GitHub</a>
-                    </div>
+                </div>
 
                 <div class="mt-8">
                     <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">#기술 스택</h4>
@@ -337,39 +429,39 @@
                 <div class="mt-8 space-y-8">
                     <div>
                         <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">프로젝트 소개</h4>
-                        <p class="text-gray-700">이 프로젝트는 스팀(Steam)에서 게임 정보와 리뷰를 수집하여 DB에 저장하고, OpenAI GPT를 활용한 감성 분석, 사용자 태그 기반 추천 게임, 그리고 Streamlit 대시보드로 시각화한 팀 프로젝트입니다.</p>
+                        <p class="text-gray-700">스팀(Steam)에서 게임 정보와 리뷰 수집, DB 저장, OpenAI GPT 활용 감성 분석, 사용자 태그 기반 추천 게임, Streamlit 대시보드 시각화 팀 프로젝트.</p>
                     </div>
 
                     <div>
                         <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">목적</h4>
-                        <p class="text-gray-700">스팀 게임 데이터와 리뷰를 분석하여 사용자에게 유용한 정보와 맞춤형 게임 추천을 제공하는 것이 주된 목적입니다. 특히, 다양한 태그를 기반으로 게임을 필터링하고, 리뷰 감성 분석을 통해 게임의 긍정적/부정적 요소를 명확히 제시하여 사용자 경험을 향상하는 데 중점을 둡니다.</p>
+                        <p class="text-gray-700">스팀 게임 데이터와 리뷰 분석을 통해 사용자에게 유용한 정보와 맞춤형 게임 추천 제공. 다양한 태그 기반 게임 필터링, 리뷰 감성 분석 통한 게임의 긍정적/부정적 요소 명확 제시로 사용자 경험 향상.</p>
                     </div>
 
                     <div>
                         <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">역할</h4>
                         <ul class="list-disc list-inside space-y-1 text-gray-700">
-                            <li><strong>대시보드 개발 및 DB 연동:</strong> 팀원들이 수집하고 분석한 데이터를 MySQL/MariaDB에서 가져와 Streamlit 기반의 대시보드에 연결하고 시각화 기능을 구현했습니다.</li>
-                            <li><strong>UI/UX 설계 및 구현:</strong> 아이디어 제공 담당자(팀장)와의 와이어프레임 협의를 통해 사용자 요구사항을 반영하고, 이를 바탕으로 Streamlit 대시보드의 전체적인 UI/UX 디자인을 직접 담당 및 구현했습니다.</li>
-                            <li><strong>성능 최적화:</strong> 대시보드 성능 향상을 위해 캐싱(Caching) 기능을 적극 활용하여 데이터 로딩 및 처리 속도를 개선했습니다.</li>
+                            <li>대시보드 개발 및 DB 연동: 팀원들이 수집하고 분석한 데이터를 MySQL/MariaDB에서 가져와 Streamlit 기반 대시보드에 연결 및 시각화 기능 구현.</li>
+                            <li>UI/UX 설계 및 구현: 아이디어 제공 담당자(팀장)와의 와이어프레임 협의 통해 사용자 요구사항 반영, Streamlit 대시보드 전체 UI/UX 디자인 직접 담당 및 구현.</li>
+                            <li>성능 최적화: 대시보드 성능 향상 위해 캐싱(Caching) 기능 적극 활용 데이터 로딩 및 처리 속도 개선.</li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">성과</h4>
                         <ul class="list-disc list-inside space-y-1 text-gray-700">
-                            <li><strong>대시보드 성능 최적화:</strong> Streamlit 대시보드의 캐싱 기능을 적극 활용하여 데이터 로딩 및 처리 속도를 획기적으로 개선. 불필요한 DB 접근을 최소화하고 대시보드의 반응성을 대폭 향상.</li>
-                            <li><strong>통합적인 UI/UX 디자인 및 구현:</strong> 아이디어 제공 담당자(팀장)와의 와이어프레임 협의를 통해 사용자 요구사항을 반영하고, 이를 바탕으로 Streamlit 대시보드의 전체적인 UI/UX 디자인 직접 담당 및 구현. 직관적인 레이아웃과 데이터 시각화 방식을 통해 사용자 친화적인 인터페이스 제공.</li>
-                            <li><strong>데이터-서비스 간 원활한 연동:</strong> 팀원들이 구축한 MySQL/MariaDB 데이터베이스와 Streamlit 기반 프론트엔드 간의 완벽한 데이터 연결 및 흐름 구축. 사용자의 인터랙션에 따라 DB에서 필요한 데이터를 효율적으로 조회하고, 이를 대시보드에 실시간으로 반영하여 안정적인 서비스 운영 환경 구현.</li>
-                            <li><strong>고도화된 리뷰 키워드 분석 시각화:</strong> OpenAI GPT를 통해 분석된 리뷰 데이터를 기반으로 긍정/부정 키워드 워드클라우드, 바 차트, 버블 차트 등 다양한 시각화 요소를 구현하여 복잡한 리뷰 감성 분석 결과 한눈에 파악.</li>
+                            <li>대시보드 성능 최적화: Streamlit 대시보드 캐싱 기능 적극 활용, 데이터 로딩 및 처리 속도 획기적 개선. 불필요한 DB 접근 최소화, 대시보드 반응성 대폭 향상.</li>
+                            <li>통합적 UI/UX 디자인 및 구현: 사용자 요구사항 반영, 직관적인 레이아웃과 시각화 방식 통한 사용자 친화적 인터페이스 제공.</li>
+                            <li>데이터-서비스 간 원활한 연동: MySQL/MariaDB와 Streamlit 프론트엔드 간 완벽한 데이터 연결 및 효율적 조회, 실시간 반영 구현. 안정적인 서비스 운영 환경 구축.</li>
+                            <li>고도화된 리뷰 키워드 분석 시각화: OpenAI GPT 통해 분석된 리뷰 데이터를 기반으로 긍정/부정 키워드 워드클라우드, 바 차트, 버블 차트 등 다양한 시각화 요소 구현, 복잡한 리뷰 감성 분석 결과 한눈에 파악.</li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">레슨 런 (Lessons Learned)</h4>
                         <ul class="list-disc list-inside space-y-1 text-gray-700">
-                            <li><strong>Streamlit 웹 개발 및 UI/UX 경험:</strong> 태그 필터링, 키워드 분석, 추천 게임 조회, 리뷰 상세 보기 등 대시보드 기능 전반 개발 및 구현. Streamlit의 강력한 시각화 및 인터랙티브 기능 활용 능력 습득. 직접 UI/UX 설계 및 구현, 사용자 관점 개발 중요성 깊이 이해.</li>
-                            <li><strong>DB 연동 및 데이터 처리:</strong> 팀원들이 구축한 MySQL/MariaDB 데이터베이스와의 연동을 통해 대용량 데이터 효율적 조회 및 처리 경험. 데이터베이스 스키마 이해 및 쿼리 최적화 실무 적용.</li>
-                            <li><strong>협업을 통한 프로젝트 완성:</strong> 각자 역할 분담을 통한 데이터 수집, 분석, 대시보드 통합 등 팀 협업의 중요성 경험. 타 팀원 결과물 활용을 통한 최종 산출물 완성 과정에서 협업 역량 강화.</li>
+                            <li>Streamlit 웹 개발 및 UI/UX 경험: 태그 필터링, 키워드 분석, 추천 게임 조회, 리뷰 상세 보기 등 대시보드 기능 전반 개발 및 구현. Streamlit의 강력한 시각화 및 인터랙티브 기능 활용 능력 습득. 직접 UI/UX 설계 및 구현, 사용자 관점 개발 중요성 깊이 이해.</li>
+                            <li>DB 연동 및 데이터 처리: MySQL/MariaDB 데이터베이스와의 연동 통한 대용량 데이터 효율적 조회 및 처리 경험. 데이터베이스 스키마 이해 및 쿼리 최적화 실무 적용.</li>
+                            <li>협업을 통한 프로젝트 완성: 역할 분담 통한 데이터 수집, 분석, 대시보드 통합 등 팀 협업의 중요성 경험. 타 팀원 결과물 활용 통한 최종 산출물 완성 과정에서 협업 역량 강화.</li>
                         </ul>
                     </div>
                 </div>
@@ -405,49 +497,49 @@
                 <div class="mt-8 space-y-8">
                     <div>
                         <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">프로젝트 소개</h4>
-                        <p class="text-gray-700">과거 범죄 데이터, 기상 데이터, 경제 지표, 검색량 데이터를 통합하여 이상동기 범죄(묻지마 범죄) 발생 가능성을 예측하고, Streamlit 기반 인터랙티브 대시보드를 통해 지역별 실시간 경보 시스템을 제공하는 프로젝트입니다.</p>
+                        <p class="text-gray-700">과거 범죄 데이터, 기상 데이터, 경제 지표, 검색량 데이터를 통합하여 이상동기 범죄(묻지마 범죄) 발생 가능성을 예측하고, Streamlit 기반 인터랙티브 대시보드를 통해 지역별 실시간 경보 시스템을 제공하는 프로젝트.</p>
                     </div>
 
                     <div>
                         <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">목적</h4>
-                        <p class="text-gray-700">이상동기 범죄의 발생 가능성을 사전에 파악하여 지역 주민과 당국에 실시간 경보 및 지역별 위험 정보를 제공함으로써 범죄 예방과 공공 안전을 강화하는 것을 목표로 합니다. 특히, 기상, 경제, 검색량 데이터를 결합해 범죄 발생의 환경적·사회적 요인을 정량화하고 예측 정확도를 높였습니다.</p>
+                        <p class="text-gray-700">이상동기 범죄 발생 가능성 사전에 파악, 지역 주민과 당국에 실시간 경보 및 지역별 위험 정보 제공으로 범죄 예방과 공공 안전 강화. 기상, 경제, 검색량 데이터 결합으로 범죄 발생 환경적·사회적 요인 정량화 및 예측 정확도 향상.</p>
                     </div>
 
                     <div>
                         <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">프로젝트 수행 과정</h4>
                         <ul class="list-disc list-inside space-y-1 text-gray-700">
-                            <li><strong>다양한 데이터 수집 및 통합:</strong> 2015~2025년 범죄 데이터(시군구 단위), 기상청 데이터(습도, 기온 등), 네이버 데이터랩 검색량, 경제 지표(실업률 등)를 수집. 약 10년간의 데이터를 통합해 분석 기반 구축.</li>
-                            <li><strong>데이터 전처리 및 매핑:</strong> 지역 데이터를 광역시도 단위로 재분류하고, 기상 및 범죄 데이터를 250×250m 격자 단위로 정규화. 결측값 처리 및 한국어 특성에 맞춘 검색량 데이터 전처리 수행.</li>
-                            <li><strong>예측 모델 개발:</strong> RandomForest, XGBoost with SMOTE, LSTM, ARIMA를 활용해 범죄 발생 가능성을 예측. 특히, SMOTE로 데이터 불균형 문제를 해결하고, LSTM으로 검색량 시계열 데이터를 분석해 시간적 패턴 도출.</li>
-                            <li><strong>Streamlit 대시보드 구현:</strong> Folium과 GeoJSON을 활용해 지역별 위험도를 인터랙티브 지도에 시각화. 4단계 위험 경보 체계(Safe, Warning, Danger, Very Dangerous)를 임계값(0.6, 0.7, 0.85)에 따라 설정해 사용자 친화적 대시보드 제공.</li>
-                            <li><strong>탐색적 데이터 분석(EDA) 및 시각화:</strong> 기상 데이터와 범죄 발생 간 상관관계, 검색량과 범죄 건수의 시차 분석(±3일, ±7일)을 통해 패턴 분석. Plotly를 활용한 시계열 그래프 및 지역별 히트맵 생성.</li>
+                            <li>다양한 데이터 수집 및 통합: 2015~2025년 범죄 데이터(시군구 단위), 기상청 데이터(습도, 기온 등), 네이버 데이터랩 검색량, 경제 지표(실업률 등) 수집. 약 10년간의 데이터 통합 분석 기반 구축.</li>
+                            <li>데이터 전처리 및 매핑: 지역 데이터 광역시도 단위 재분류, 기상 및 범죄 데이터 250×250m 격자 단위 정규화. 결측값 처리 및 한국어 특성 맞춤 검색량 데이터 전처리.</li>
+                            <li>예측 모델 개발: RandomForest, XGBoost with SMOTE, LSTM, ARIMA 활용 범죄 발생 가능성 예측. SMOTE로 데이터 불균형 문제 해결, LSTM으로 검색량 시계열 데이터 분석 시간적 패턴 도출.</li>
+                            <li>Streamlit 대시보드 구현: Folium과 GeoJSON 활용 지역별 위험도 인터랙티브 지도 시각화. 4단계 위험 경보 체계(Safe, Warning, Danger, Very Dangerous) 임계값(0.6, 0.7, 0.85) 설정으로 사용자 친화적 대시보드 제공.</li>
+                            <li>탐색적 데이터 분석(EDA) 및 시각화: 기상 데이터와 범죄 발생 간 상관관계, 검색량과 범죄 건수의 시차 분석(±3일, ±7일) 통해 패턴 분석. Plotly 활용 시계열 그래프 및 지역별 히트맵 생성.</li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">역할 (팀 리더)</h4>
                         <ul class="list-disc list-inside space-y-1 text-gray-700">
-                            <li><strong>데이터 전처리 및 통합:</strong> 2015~2025년 범죄, 기상, 검색량 데이터를 수집하고, 광역시도 및 격자 단위로 매핑. 결측값 처리와 데이터 정규화를 주도하여 모델 학습 기반 마련했습니다.</li>
-                            <li><strong>모델링 및 최적화 전문가:</strong> XGBoost와 SMOTE를 활용한 이진 분류 모델 개발, LSTM으로 시계열 데이터 분석. 하이퍼파라미터 튜닝과 임계값 최적화를 통해 예측 성능 개선했습니다.</li>
-                            <li><strong>대시보드 개발자:</strong> Streamlit과 Folium을 사용해 지역별 위험 경보를 시각화. GeoJSON 기반 자치구 경계 지도 구현 및 4단계 경보 체계 설계했습니다.</li>
+                            <li>데이터 전처리 및 통합: 2015~2025년 범죄, 기상, 검색량 데이터 수집, 광역시도 및 격자 단위 매핑. 결측값 처리와 데이터 정규화 주도 모델 학습 기반 마련.</li>
+                            <li>모델링 및 최적화 전문가: XGBoost와 SMOTE 활용 이진 분류 모델 개발, LSTM으로 시계열 데이터 분석. 하이퍼파라미터 튜닝과 임계값 최적화 통해 예측 성능 개선.</li>
+                            <li>대시보드 개발자: Streamlit과 Folium 사용 지역별 위험 경보 시각화. GeoJSON 기반 자치구 경계 지도 구현 및 4단계 경보 체계 설계.</li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">성과</h4>
                         <ul class="list-disc list-inside space-y-1 text-gray-700">
-                            <li><strong>정확한 범죄 예측 모델 개발:</strong> 기상, 경제, 검색량 데이터를 통합한 XGBoost와 LSTM 모델로 이상동기 범죄 발생 가능성을 성공적으로 예측. 특히, SMOTE 적용으로 소수 클래스 예측 성능 개선.</li>
-                            <li><strong>사용자 친화적 대시보드 구현:</strong> Streamlit 기반 대시보드를 통해 지역별 위험도를 직관적으로 시각화. 4단계 경보 체계로 실시간 정보 제공, 공공 안전 강화에 기여.</li>
-                            <li><strong>데이터 기반 인사이트 도출:</strong> 기상 데이터(습도, 기온)와 검색량 데이터의 시차 분석을 통해 범죄 발생의 환경적·사회적 요인 규명. 상관계수(0.54~0.58) 기반 패턴 분석으로 예측 설명력 향상.</li>
+                            <li>정확한 범죄 예측 모델 개발: 기상, 경제, 검색량 데이터 통합 XGBoost와 LSTM 모델로 이상동기 범죄 발생 가능성 예측 성공. SMOTE 적용으로 소수 클래스 예측 성능 개선.</li>
+                            <li>사용자 친화적 대시보드 구현: Streamlit 기반 대시보드를 통해 지역별 위험도 직관적 시각화. 4단계 경보 체계로 실시간 정보 제공, 공공 안전 강화 기여.</li>
+                            <li>데이터 기반 인사이트 도출: 기상 데이터(습도, 기온)와 검색량 데이터의 시차 분석 통해 범죄 발생의 환경적·사회적 요인 규명. 상관계수(0.54~0.58) 기반 패턴 분석으로 예측 설명력 향상.</li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">레슨 런 (Lessons Learned)</h4>
                         <ul class="list-disc list-inside space-y-1 text-gray-700">
-                            <li><strong>다양한 데이터 통합의 중요성:</strong> 범죄, 기상, 경제, 검색량 등 이종 데이터를 통합하고 정규화하는 과정에서 데이터 단위와 시간적 일관성 유지가 예측 성능에 큰 영향을 미침을 학습.</li>
-                            <li><strong>모델 최적화의 필요성:</strong> SMOTE, 하이퍼파라미터 튜닝, 임계값 조정을 통해 데이터 불균형과 과적합 문제를 해결하며 모델 성능을 최적화하는 경험을 얻음.</li>
-                            <li><strong>시각화의 효과:</strong> Folium과 GeoJSON을 활용한 인터랙티브 지도와 Plotly 기반 시각화로 복잡한 데이터를 사용자 친화적으로 전달하는 중요성을 체감.</li>
+                            <li>다양한 데이터 통합의 중요성: 범죄, 기상, 경제, 검색량 등 이종 데이터 통합 및 정규화 과정에서 데이터 단위와 시간적 일관성 유지가 예측 성능에 큰 영향 미침 학습.</li>
+                            <li>모델 최적화의 필요성: SMOTE, 하이퍼파라미터 튜닝, 임계값 조정을 통해 데이터 불균형과 과적합 문제 해결하며 모델 성능 최적화 경험.</li>
+                            <li>시각화의 효과: Folium과 GeoJSON 활용 인터랙티브 지도와 Plotly 기반 시각화로 복잡한 데이터를 사용자 친화적으로 전달하는 중요성 체감.</li>
                         </ul>
                     </div>
                 </div>
@@ -458,7 +550,7 @@
 
     <footer class="bg-gray-800 text-white mt-20">
         <div class="container mx-auto px-6 py-4 text-center">
-            <p>&copy; 2024 윤상호. All Rights Reserved.</p>
+            <p>© 2024 윤상호. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -502,6 +594,25 @@
                 modalContainer.classList.remove('active');
                 body.style.overflow = '';
             }
+        });
+
+        // JavaScript for Profile Read More functionality
+        const readMoreBtn = document.getElementById('read-more-btn');
+        const closeDetailsBtn = document.getElementById('close-details-btn');
+        const profileDetails = document.getElementById('profile-details');
+
+        readMoreBtn.addEventListener('click', () => {
+            profileDetails.classList.remove('hidden');
+            profileDetails.classList.add('show');
+            readMoreBtn.classList.add('hidden'); // Hide Read More button
+        });
+
+        closeDetailsBtn.addEventListener('click', () => {
+            profileDetails.classList.remove('show');
+            setTimeout(() => {
+                profileDetails.classList.add('hidden');
+                readMoreBtn.classList.remove('hidden'); // Show Read More button again
+            }, 300); // Match the transition duration
         });
     </script>
 </body>
