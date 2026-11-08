@@ -184,7 +184,7 @@
                                     <span>yoonsh2704@naver.com / yoonsh2704@gmail.com</span>
                                 </div>
                                 <div class="flex items-center justify-center md:justify-start">
-                                    <svg class="w-6 h-6 mr-3 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.11.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.085 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.652.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .319.22.694.825.576C20.565 21.795 24 17.3 24 12 24 5.373 18.627 0 12 0z"/></svg>
+                                    <svg class="w-6 h-6 mr-3 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.11.82-.26.82-.577 0-.285-.01-1.04-.015-2.040-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.085 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.652.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .319.22.694.825.576C20.565 21.795 24 17.3 24 12 24 5.373 18.627 0 12 0z"/></svg>
                                     <span><a href="https://github.com/dbstkdgh" target="_blank" class="hover:text-blue-600">github.com/dbstkdgh</a></span>
                                 </div>
                             </div>
@@ -360,6 +360,20 @@
 
             <h3 class="text-3xl font-bold text-gray-800 text-center mb-8 mt-16">Personal Projects</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card-item bg-white rounded-2xl shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-transform duration-300" data-project-id="knocknock">
+                    <div class="w-full h-48 flex items-center justify-center" style="background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 55%,#60a5fa 100%);">
+                        <div class="text-center text-white">
+                            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-2" aria-hidden="true"><path d="M12 21s-7-4.35-9.5-8.5C.9 9.6 2.4 5.5 6.2 5.1c2-.2 3.4.9 4.3 2.1h1c.9-1.2 2.3-2.3 4.3-2.1 3.8.4 5.3 4.5 3.7 7.4C19 16.65 12 21 12 21z"/><path d="M7.5 12h2.2l1.3-2.4 2 4.8 1.3-2.4h2.2"/></svg>
+                            <div class="text-2xl font-black tracking-tight">똑똑 KnockKnock</div>
+                            <div class="text-sm opacity-90 mt-1">1인 가구 안부 확인 앱</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-gray-900 truncate">똑똑 — 1인 가구 안부 확인 앱 (1인 개발)</h4>
+                        <div class="mt-4 text-xs text-gray-500">Android · 기획 · 디자인 · 개발 · 배포</div>
+                    </div>
+                </div>
+
                 <div class="project-card-item bg-white rounded-2xl shadow-xl overflow-hidden cursor-pointer transform hover:scale-105 transition-transform duration-300" data-project-id="old-restaurant-app">
                     <img src="images/image.png" alt="노포식당 앱 스크린샷" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -414,6 +428,84 @@
     <div id="project-modal-container" class="modal-container">
         <div class="modal-content">
             <button class="close-button" id="close-modal-btn">×</button>
+
+            <div id="project-knocknock" class="project-detail-section">
+                <h3 class="text-3xl font-bold text-gray-900 mb-2">똑똑(KnockKnock) — 1인 가구 안부 확인 앱 (1인 개발)</h3>
+                <p class="mt-2 text-sm text-gray-500"><strong>형태:</strong> Android 앱 · 기획, 디자인, 개발, 배포 1인 수행</p>
+
+                <div class="mt-6 flex flex-wrap gap-3">
+                    <a href="knocknock.html" target="_blank" class="inline-block bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition font-semibold shadow-md">앱 안내</a>
+                    <a href="privacy.html" target="_blank" class="inline-block bg-gray-800 text-white px-5 py-2 rounded-lg hover:bg-gray-900 transition font-semibold shadow-md">개인정보처리방침</a>
+                </div>
+
+                <div class="mt-8">
+                    <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">#기술 스택</h4>
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">TypeScript</span>
+                    <span class="tech-badge">Vite</span>
+                    <span class="tech-badge">Tailwind CSS</span>
+                    <span class="tech-badge">Capacitor (Android)</span>
+                    <span class="tech-badge">Firebase Firestore</span>
+                    <span class="tech-badge">Cloud Functions</span>
+                    <span class="tech-badge">Cloud Scheduler</span>
+                    <span class="tech-badge">FCM</span>
+                    <span class="tech-badge">Gmail API</span>
+                    <span class="tech-badge">Google OAuth 2.0</span>
+                </div>
+
+                <div class="mt-8 space-y-8">
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">프로젝트 소개</h4>
+                        <p class="text-gray-700">하루 한 번 "똑똑, 저 잘 있어요" 버튼을 누르는 안부 확인 앱입니다. 정해진 시간 안에 누르지 않으면, 휴대폰이 꺼져 있거나 배터리가 없어도 서버가 이를 판단해 미리 등록한 보호자에게 비상 메일을 보냅니다.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">왜 만들었나 — 문제 정의</h4>
+                        <p class="text-gray-700 mb-2">기존 안부 확인 방식은 모두 "본인이 응답할 수 있다"는 전제 위에 있습니다. 정작 쓰러진 사람에게는 작동하지 않는 지점이 있었습니다.</p>
+                        <ul class="list-disc list-inside space-y-1 text-gray-700">
+                            <li>지자체 방문·안부 전화: 인력과 비용이 많이 들고, 24시간 공백을 메우기 어렵습니다.</li>
+                            <li>IoT 센서: 기기 구입·설치 비용이 들고, 고장과 사생활 침해 거부감이 있습니다.</li>
+                            <li>휴대폰 알람 앱: 사용자가 의식을 잃으면 알람은 휴대폰 안에서만 울리다 꺼지고, 밖으로 도움 요청이 나가지 않습니다.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">해결 방식 — 데드맨 스위치</h4>
+                        <p class="text-gray-700 mb-2">기관사가 쓰러지면 열차가 자동으로 멈추는 장치에서 착안했습니다. 판단을 휴대폰이 아니라 서버가 하도록 설계했습니다.</p>
+                        <ol class="list-decimal list-inside space-y-1 text-gray-700">
+                            <li>구글 계정으로 가입하고 보호자 이메일(여러 명 가능)과 안부 주기(기본 24시간)를 정합니다.</li>
+                            <li>버튼을 누르면 마지막 확인 시각만 기록되고 타이머가 다시 시작됩니다.</li>
+                            <li>마감 30분 전, 휴대폰으로 경고 알림을 보냅니다.</li>
+                            <li>마감이 지나도 응답이 없으면 서버 스케줄러가 보호자에게 비상 메일을 보냅니다.</li>
+                            <li>잠시 쉬고 싶을 때는 일시정지, 탈퇴 시에는 계정·데이터·토큰을 모두 지웁니다.</li>
+                        </ol>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">설계 판단 — AI 제안을 기각한 이유</h4>
+                        <p class="text-gray-700">처음에 AI 도구가 "앱이 1분마다 서버에 신호를 보내고, 5분간 신호가 없으면 비상으로 본다"는 구조를 제안했습니다. 그런데 안드로이드와 iOS는 배터리 절약을 위해 백그라운드 앱의 실행을 몇 분 안에 멈춥니다. 이 구조라면 사용자가 앱을 닫고 잠만 자도 보호자에게 비상 메일이 갑니다. 그래서 앱은 버튼을 누른 시각만 기록하고, 위험 판단은 서버가 독립적으로 하는 구조로 바꿨습니다.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">막혔던 문제와 해결</h4>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li><strong>가입 직후 권한 오류:</strong> 네이티브 로그인은 끝났지만 웹 쪽 인증이 아직 넘어오지 않은 순간에 데이터를 쓰려다 보안 규칙에 막혔습니다. 인증 동기화를 먼저 끝낸 뒤 데이터를 쓰도록 순서를 고정했습니다.</li>
+                            <li><strong>'투명인간' 버그:</strong> 감시 쿼리의 "같지 않음(!=)" 조건은 해당 필드가 아예 없는 문서를 검색에서 빼 버립니다. 그래서 막 가입한 사용자는 시간이 지나도 메일이 나가지 않았습니다. 가입할 때 기본값을 명시적으로 넣어 바로 감시 대상에 들어가게 했습니다.</li>
+                            <li><strong>구글 권한 심사 보류 중 앱 종료:</strong> 메일 발송 권한(gmail.send)은 구글의 제한 권한이라 심사가 필요합니다. 심사 보류 상태에서 안드로이드 14 이상의 로그인 창이 경고 화면을 띄우지 못하고 앱이 꺼졌습니다. 심사 제출용 시연 영상을 찍을 수 있도록 1분 주기 테스트 모드를 만들고, 승인 절차를 단계별로 정리했습니다.</li>
+                            <li><strong>앱 삭제 오진:</strong> 재설치 직후 푸시 토큰이 아직 전파되지 않은 상태를 서버가 "앱 삭제"로 판단해 사용자를 비활성화했고, 그 바람에 나가야 할 비상 메일이 취소됐습니다. 오진 가능성이 있는 비활성화 로직을 분리하고, 비상 메일 발송을 우선하도록 바꿨습니다.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3 mb-3">레슨 런 (Lessons Learned)</h4>
+                        <ul class="list-disc list-inside space-y-1 text-gray-700">
+                            <li>안전 기능은 사용자의 기기가 멀쩡하다는 가정 위에 두면 안 됩니다. 판단은 기기 밖에서 해야 합니다.</li>
+                            <li>판단이 애매할 때는 사용자를 끄는 쪽보다 보호자에게 알리는 쪽으로 기울도록 설계합니다.</li>
+                            <li>AI가 제안한 구조도 실제 실행 환경(OS 정책, 심사 규정)에 대입해 확인한 뒤에 씁니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
             <div id="project-old-restaurant-app" class="project-detail-section">
                 <h3 class="text-3xl font-bold text-gray-900 mb-2">수원시 노포식당 앱 개발 대시보드 (1인 개발)</h3>
